@@ -111,8 +111,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   _buildPets(List<Pet> pets, PetType petTypeFilter) {
-    return Expanded(
+    return Flexible(
       child: ListView.builder(
+   
         shrinkWrap: true,
         itemCount: pets.length,
         itemBuilder: (context, index) {

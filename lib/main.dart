@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pet_adoption/navigation/app_navigation_service.dart';
@@ -18,6 +20,14 @@ class MyApp extends StatelessWidget {
       animation: themeNotifier,
       builder: (context, child) {
         return MaterialApp(
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch,
+              PointerDeviceKind.stylus,
+              PointerDeviceKind.unknown
+            },
+          ),
           navigatorKey: appNavigationService.myNavigatorKey,
           title: 'Multilingual App',
           theme: themeNotifier.themeData,

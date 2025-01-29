@@ -59,7 +59,7 @@ class _HistoryPageState extends State<HistoryPage> {
             ),
           );
         }
-        return Expanded(
+        return Flexible(
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: pets.length,
