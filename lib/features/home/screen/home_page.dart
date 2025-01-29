@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_adoption/common/constants/app_colors.dart';
 import 'package:pet_adoption/common/constants/app_text_style.dart';
+import 'package:pet_adoption/common/constants/data.dart';
 import 'package:pet_adoption/common/constants/extensions.dart';
 import 'package:pet_adoption/common/constants/spacing.dart';
 import 'package:pet_adoption/common/widgets/common_text.dart';
@@ -61,8 +62,9 @@ class _HomePageState extends State<HomePage> {
                   ValueListenableBuilder<List<Pet>>(
                     valueListenable: _homeService.petsList,
                     builder: (context, pets, child) {
-                      final petTypeFilter =
-                          _homeService.categories[_selectedCategory].petType;
+                      final petTypeFilter = (_homeService.categories.isNotEmpty)
+                          ? _homeService.categories[_selectedCategory].petType
+                          : PetType.all;
                       return pets.isEmpty
                           ? CommonText(
                               text: _appLocalizations.noPetsForAdoption,

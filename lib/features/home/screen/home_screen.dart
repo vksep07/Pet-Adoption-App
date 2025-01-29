@@ -85,7 +85,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       width: double.infinity,
       margin: const EdgeInsets.symmetric(
         horizontal: AppSpacing.space24,
-        vertical: 0,
+        vertical:  AppSpacing.space20,
       ),
       decoration: BoxDecoration(
         color: AppColors.bottomBarColor,
